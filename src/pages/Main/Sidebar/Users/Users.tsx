@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
+import { users } from '../../../../data/users';
+import { User } from './User';
 
 const Container = styled.div`
   display: flex;
@@ -11,7 +13,11 @@ const Container = styled.div`
 export const Users = () => {
   return (
     <Container>
-      pippo
+      {
+        users.map(user => (
+          <User key={user.id} user={user}/>
+        ))
+      }
     </Container>
   )
 }
